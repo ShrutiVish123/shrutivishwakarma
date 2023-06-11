@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #0b0423;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.head{
+    color: white!important;
+    text-align: center;
+    background-color: #0b0423;
+    background: #e91e63;
+    height: 40px;
+    border-radius: 5PX;
+    font-size: 18px;
+    width: 125px;
+    padding-top: 8px;    
+}
+
+#left, #right{
+    width: 300px;
+    min-height: 400px;
+    margin:20px;
+    border: 2px dashed #fff;
+
+}
+
+.list{
+    background: #e91e63;
+    height: 60px;
+    margin: 30px;
+    color: #fff;
+    align-items: center;
+    cursor: grab;
+    
+    
+}
+
+.list img{
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-top: 5px;
+    width: 35px;
+    
+}
+
+
+/* Media Query */
+
+@media (max-width: 666px) {
+   
+    .list{
+        background: #e91e63;
+        height: 70px;
+        margin: 20px;
+        color: #fff;
+        align-items: center;
+        cursor: grab;
+        border-radius: 5px;
+        width: 60%;
+        font-size: 10px;
+    }
+    
+    .list img{
+        width: 25px;
+        margin: 5px 10px 10px 10px;
+        
+    }
+}
+ 
+@media (max-width: 768px) {
+
+   
+    
+    #left, #right{
+        width: 800px;
+        min-height: 300px;
+        margin:8px;
+        border: 2px dashed #fff;
+        font-size: 12px;
+        text-align: center;
+    
+    }
+    
+    .list{
+        background: #e91e63;
+        height: 50px;
+        margin: 20px;
+        color: #fff;
+        align-items:normal;
+        cursor: grab;
+        border-radius: 5px;
+        /* width: 70%; */
+        font-size: 12px;
+    }
+    
+    .list img{
+        width: 25px;
+        margin: 8px 5px 5px 5px;
+        
+    }
+}
+
+@media (max-width: 434px){
+    
+    .list{
+        background: #e91e63;
+        color: #fff;
+        align-items: center;
+        cursor: grab;
+        border-radius: 5px;
+        width: 65%;
+        /* font-size:8px; */
+        /* height: 50px; */
+        margin: 15px 10px 10px 10px;
+    }
+    
+    .list img{
+        width: 20px;
+        margin: 5px 0px 5px 0px;
+        
+    }   
+}

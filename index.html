@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag & Drop using javascript</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div><h1 class="head">Drag & Drop</h1></div>
+      <div id="left">
+        <div class="list" draggable="true">
+          <img src="icon (2).png" />
+          Image
+        </div>
+        <div class="list" draggable="true">
+          <img src="icon (2).png" />
+          Lorem
+        </div>
+        <div class="list" draggable="true">
+          <img src="icon (2).png" />
+          List 1
+        </div>
+        <div class="list" draggable="true">
+          <img src="icon (2).png" />
+          Lorem1
+        </div>
+      </div>
+      <div id="right"></div>
+      <input
+        type="button"
+        value="Reset"
+        class="btn btn-dark"
+        id="reset"
+        onclick="reset1();"
+        style="width: 100px; background-color:#e91e63; color: white"
+      />
+      <!-- <button type="button" value="Reset" id="reset" onclick="reset1()" class="btn btn-dark">Dark</button> -->
+    </div>
+
+    <script>
+        let lists = document.getElementsByClassName("list");
+        let rightBox = document.getElementById("right");
+        let leftBox = document.getElementById("left");
+        let html;
+    
+        // Function to add event listeners to draggable elements
+        function addDragListeners() {
+            for (let list of lists) {
+                list.addEventListener("dragstart", function (e) {
+                    let selected = e.target;
+    
+                    rightBox.addEventListener("dragover", function (e) {
+                        e.preventDefault();
+                    });
+                    rightBox.addEventListener("drop", function (e) {
+                        rightBox.appendChild(selected);
+                        selected = null;
+                        alert("Successfully dropped");
+                    });
+    
+                    leftBox.addEventListener("dragover", function (e) {
+                        e.preventDefault();
+                    });
+                    leftBox.addEventListener("drop", function (e) {
+                        leftBox.appendChild(selected);
+                        selected = null;
+                        alert("Successfully dropped");
+                    });
+                });
+            }
+        }
+    
+        addDragListeners(); // Initial attachment of event listeners
+    
+        function reset1() {
+            var container = document.getElementById("left");
+            var rightBox = document.getElementById("right");
+            container.innerHTML = html;
+            rightBox.innerHTML = ""; // Clear the contents of the right box
+            addDragListeners(); // Reattach event listeners
+        }
+    
+        window.onload = function () {
+            html = document.getElementById('left').innerHTML;
+        };
+    </script>
+    
+  </body>
+</html>
